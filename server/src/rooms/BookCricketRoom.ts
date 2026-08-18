@@ -2,7 +2,7 @@ import { Room, Client } from "colyseus";
 import { BookCricketState, GameStatus, PlayerStatus } from "./schema/BookCricketState";
 import { generatePage, calculateFlipResult, resolveNewStatus } from "./book-cricket/bookCricketRules";
 
-export class BookCricketRoom extends Room<BookCricketState> {
+export class BookCricketRoom extends Room<{ state: BookCricketState }> {
   maxClients = 1;
 
   // Exposed for tests so we can mock the random page generation

@@ -19,7 +19,7 @@ const VALID_DIRECTIONS = new Set(["up", "down", "left", "right"]);
  * The server validates, computes the new position, and updates state.
  * Clients never directly set their own x/y.
  */
-export class SkeletonRoom extends Room<SkeletonState> {
+export class SkeletonRoom extends Room<{ state: SkeletonState }> {
   maxClients = 2;
 
   onCreate(): void {

@@ -4,7 +4,7 @@ import { PlayerStatus } from "../schema/BookCricketState";
 import { generatePage, calculateFlipResult, resolveNewStatus } from "./bookCricketRules";
 import { updateChallengeStatus, completeChallenge } from "../../challenges/challengeRepository";
 
-export class FriendBookCricketRoom extends Room<FriendBookCricketState> {
+export class FriendBookCricketRoom extends Room<{ state: FriendBookCricketState }> {
   maxClients = 2;
 
   // Exposed for tests
@@ -68,8 +68,8 @@ export class FriendBookCricketRoom extends Room<FriendBookCricketState> {
     }
   }
 
-  async onLeave(client: Client, consented: boolean): Promise<void> {
-    console.log(`\n[FriendBookCricketRoom] Player ${client.sessionId} left.`);
+  async onLeave(client: Client, code?: number): Promise<void> {
+    console.log(`\n[FriendBookCricketRoom] Player ${client.sessionId} left (code: ${code}).`);
 
     if (this.state.gameStatus !== FriendGameStatus.GAME_OVER && 
         this.state.gameStatus !== FriendGameStatus.WAITING_FOR_OPPONENT) {
