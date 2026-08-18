@@ -200,7 +200,7 @@ export default function BookCricketGame({ onBack }: { onBack?: () => void }) {
     setChallengeLoading(true);
     setChallengeError(null);
     try {
-      const res = await fetch("http://localhost:2567/api/challenges", {
+      const res = await fetch(`${SERVER_URL}/api/challenges`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ gameType: "BOOK_CRICKET", creatorScore: pScore })

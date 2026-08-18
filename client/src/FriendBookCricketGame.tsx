@@ -10,7 +10,7 @@ interface FriendBookCricketProps {
   challengeId?: string | null;
 }
 
-const SERVER_URL = "ws://localhost:2567";
+const SERVER_URL = import.meta.env.VITE_SERVER_URL || "http://localhost:2567";
 
 export default function FriendBookCricketGame({ onBack, challengeId }: FriendBookCricketProps) {
   const isMobile = useIsMobile();
@@ -80,7 +80,7 @@ export default function FriendBookCricketGame({ onBack, challengeId }: FriendBoo
     if (challengeId && status === "loading") {
       (async () => {
         try {
-          const res = await fetch(`${SERVER_URL.replace("ws://", "http://")}/api/challenges/${challengeId}`);
+          const res = await fetch(`${SERVER_URL}/api/challenges/${challengeId}`);
           const data = await res.json();
           if (!res.ok) {
             setErrorMsg(data.error || "Challenge not found");
@@ -184,7 +184,7 @@ export default function FriendBookCricketGame({ onBack, challengeId }: FriendBoo
       // I am the FRIEND joining
       setStatus("connecting");
       try {
-        const res = await fetch(`${SERVER_URL.replace("ws://", "http://")}/api/challenges/${challengeId}`);
+        const res = await fetch(`${SERVER_URL}/api/challenges/${challengeId}`);
         const data = await res.json();
         if (!res.ok || !data.roomId) {
           setErrorMsg("Could not find the challenge room.");
@@ -211,7 +211,7 @@ export default function FriendBookCricketGame({ onBack, challengeId }: FriendBoo
       setStatus("connecting");
       try {
         // 1. Create challenge in DB
-        const cRes = await fetch(`${SERVER_URL.replace("ws://", "http://")}/api/challenges`, {
+        const cRes = await fetch(`${SERVER_URL}/api/challenges`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ gameType: "BOOK_CRICKET" })
@@ -224,7 +224,7 @@ export default function FriendBookCricketGame({ onBack, challengeId }: FriendBoo
         const room = await client.create("friend-book-cricket", { name: trimmedName, challengeId: cData.id });
 
         // 3. Map challenge to room
-        await fetch(`${SERVER_URL.replace("ws://", "http://")}/api/challenges/${cData.id}/room`, {
+        await fetch(`${SERVER_URL}/api/challenges/${cData.id}/room`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ roomId: room.roomId })
