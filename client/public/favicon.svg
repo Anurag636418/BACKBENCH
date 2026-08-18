@@ -1,0 +1,31 @@
+<svg width="512" height="512" viewBox="0 0 450 520" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Cover Gradient -->
+    <linearGradient id="coverGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1A2A3A"/>
+      <stop offset="2%" stop-color="#2C445E"/>
+      <stop offset="100%" stop-color="#15222F"/>
+    </linearGradient>
+    
+    <!-- Paper Edge Gradient -->
+    <linearGradient id="paperEdge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FDFBF7"/>
+      <stop offset="50%" stop-color="#D9CBBB"/>
+      <stop offset="100%" stop-color="#BCA993"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="25" y="15" width="400" height="490" rx="8" ry="8" fill="#101820" />
+  <path d="M 35 15 L 430 15 L 430 485 L 35 485 Z" fill="url(#paperEdge)" />
+  
+  <!-- Front Cover -->
+  <rect x="15" y="10" width="410" height="495" rx="5" ry="5" fill="url(#coverGrad)" />
+  
+  <!-- Spine detailing -->
+  <rect x="15" y="10" width="30" height="495" fill="#0A1520" />
+  <rect x="40" y="10" width="2" height="495" fill="#3B5773" />
+  
+  <!-- Cover Title -->
+  <text x="220" y="260" font-family="serif" font-size="80" font-weight="bold" fill="#D4AF37" text-anchor="middle" opacity="0.9">BB</text>
+  <rect x="130" y="160" width="180" height="150" fill="none" stroke="#D4AF37" stroke-width="4" opacity="0.5"/>
+</svg>
