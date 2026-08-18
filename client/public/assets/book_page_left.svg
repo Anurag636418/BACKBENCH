@@ -1,0 +1,13 @@
+<svg width="380" height="480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pageGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F2EBE1"/>
+      <stop offset="90%" stop-color="#FDFBF7"/>
+      <stop offset="100%" stop-color="#D9CBBB"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="-2" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <rect x="10" y="5" width="370" height="470" rx="3" ry="3" fill="url(#pageGrad)" filter="url(#shadow)"/>
+</svg>

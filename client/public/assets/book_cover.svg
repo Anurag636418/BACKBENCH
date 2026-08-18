@@ -1,0 +1,18 @@
+<svg width="840" height="540" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="coverGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1A2A3A"/>
+      <stop offset="48%" stop-color="#2C445E"/>
+      <stop offset="50%" stop-color="#15222F"/>
+      <stop offset="52%" stop-color="#2C445E"/>
+      <stop offset="100%" stop-color="#1A2A3A"/>
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="10" dy="15" stdDeviation="15" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+  <rect x="20" y="20" width="800" height="500" rx="15" ry="15" fill="url(#coverGrad)" filter="url(#dropShadow)"/>
+  
+  <!-- Edge thickness -->
+  <rect x="20" y="20" width="800" height="500" rx="15" ry="15" fill="none" stroke="#4A6583" stroke-width="2"/>
+</svg>

@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS challenges (
+  id VARCHAR(10) PRIMARY KEY,
+  game_type VARCHAR(50) NOT NULL,
+  creator_name VARCHAR(100),
+  creator_score INT NOT NULL,
+  status VARCHAR(20) DEFAULT 'WAITING',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  completed_at TIMESTAMP
+);

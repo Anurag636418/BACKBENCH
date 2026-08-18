@@ -1,0 +1,48 @@
+<svg width="380" height="480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pageGradRight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B8A794"/>
+      <stop offset="2%" stop-color="#D9CBBB"/>
+      <stop offset="10%" stop-color="#FDFBF7"/>
+      <stop offset="60%" stop-color="#F4EEE4"/>
+      <stop offset="100%" stop-color="#EBE3D5"/>
+    </linearGradient>
+    <radialGradient id="wearRight" cx="90%" cy="10%" r="90%">
+      <stop offset="70%" stop-color="black" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#8c775a" stop-opacity="0.3"/>
+    </radialGradient>
+    <filter id="shadowRight">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect x="0" y="5" width="370" height="470" rx="3" ry="3" fill="url(#pageGradRight)" filter="url(#shadowRight)"/>
+  <rect x="0" y="5" width="370" height="470" rx="3" ry="3" fill="url(#wearRight)" />
+  
+  <!-- Textbook Content Overlay -->
+  <g transform="translate(20, 40)" opacity="0.8">
+    <text x="0" y="0" font-family="sans-serif" font-size="14" font-weight="bold" fill="#4B6E4A">SECTION 6.2</text>
+    <rect x="0" y="8" width="330" height="2" fill="#4B6E4A"/>
+    <text x="0" y="30" font-family="sans-serif" font-size="22" font-weight="bold" fill="#333">KINETIC ENERGY</text>
+    
+    <text x="0" y="65" font-family="serif" font-size="13" fill="#444">
+      <tspan x="0" dy="0">The energy possessed by a body due to its</tspan>
+      <tspan x="0" dy="16">motion is called kinetic energy. It is defined as</tspan>
+      <tspan x="0" dy="16">the work needed to accelerate a body of a given</tspan>
+      <tspan x="0" dy="16">mass from rest to its stated velocity.</tspan>
+    </text>
+    
+    <!-- Equation Box -->
+    <rect x="60" y="100" width="190" height="45" fill="#EBF2E9" stroke="#A9CBA6" rx="4"/>
+    <text x="155" y="128" font-family="serif" font-style="italic" font-size="18" fill="#222" text-anchor="middle">K = ½ mv²</text>
+    
+    <text x="0" y="170" font-family="serif" font-size="12" fill="#666">
+      <tspan x="0" dy="0">Where,</tspan>
+      <tspan x="0" dy="16" font-style="italic">K</tspan><tspan> = Kinetic energy (J)</tspan>
+      <tspan x="0" dy="16" font-style="italic">m</tspan><tspan> = Mass (kg)</tspan>
+      <tspan x="0" dy="16" font-style="italic">v</tspan><tspan> = Velocity (m/s)</tspan>
+    </text>
+
+    <!-- We leave the bottom half relatively empty so the dynamic PAGE + RESULT can be displayed prominently without overlapping too much text -->
+  </g>
+</svg>
